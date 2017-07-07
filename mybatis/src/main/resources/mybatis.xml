@@ -27,6 +27,17 @@
 			<property name="password" value="123456"/>
 		</dataSource>
 	</environment>
+
+	<environment id="oper">
+		<transactionManager type="JDBC"></transactionManager>
+		<dataSource type="POOLED">
+			<property name="driver" value="com.mysql.jdbc.Driver"/>
+			<property name="url" value="jdbc:mysql:///mydb"/>
+			<property name="username" value="root"/>
+			<property name="password" value="123456"/>
+		</dataSource>
+
+	</environment>
 	
 	<environment id="test">
 		<!-- 配置实物管理器 -->

@@ -15,7 +15,11 @@
 	</select>
 	
 	<select id="findAll" resultType="com.kaishengit.entity.User">
-		select * from t_user
+		select * from t_user 
+	</select>
+	
+	<select id="findByParams" resultType="User">
+		select * from t_user where userName = #{}
 	</select>
 	
 	<insert id="save" parameterType="User">
@@ -30,4 +34,7 @@
 		delete from t_user where id = #{id} 
 	</delete>
 	
+	<delete id="deletes" parameterType="list"> 
+		delete from t_user where 
+	</delete>
 </mapper>

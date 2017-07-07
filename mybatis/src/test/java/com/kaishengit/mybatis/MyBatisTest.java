@@ -12,6 +12,9 @@ import org.junit.Test;
 import com.kaishengit.entity.User;
 
 public class MyBatisTest {
+	
+	
+	
 	@Test
 	public void findAll()throws Exception {
 		
@@ -48,6 +51,7 @@ public class MyBatisTest {
 		User user = sqlSession.selectOne("com.kaishengit.mapper.UserMapper.findById",1);
 		System.out.println(user.getUserName());
 		System.out.println(user.getAddress());
+		
 		
 		//5.关闭session
 		sqlSession.close();
@@ -89,9 +93,9 @@ public class MyBatisTest {
 		//3.创建sql session
 		SqlSession sqlSession = sqlSessionFactory.openSession();//openSession(true)自动提交事务
 		//4.操作数据库
-		User user = sqlSession.selectOne("com.kaishengit.mapper.UserMapper.findById",1);
+		User user = sqlSession.selectOne("com.kaishengit.mapper.UserMapper.findById",3);
 	
-		user.setAddress("beijing");
+		user.setUserName("明月");
 		
 		sqlSession.update("com.kaishengit.mapper.UserMapper.update",user);
 		
